@@ -24,6 +24,8 @@ public class Main{
         System.out.println(deleteEvenArrayList(list));
         System.out.print("Максимальное значение в сгенерированном ArrayList: ");
         System.out.println(Collections.max(list));
+        System.out.print("Минимальное значение в сгенерированном ArrayList: ");
+        System.out.println(Collections.min(list));
         System.out.print("Среднее значение в сгенерированном ArrayList: ");
         System.out.println(averageArrayList(list));
     }
