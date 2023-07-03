@@ -11,13 +11,21 @@
  */
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Iterator;
 
 public class Main{
     public static void main(String[] args) {
         ArrayList<Integer> list = generateRandomArrayList(20, 10, 0);
+        System.out.print("Сгенерированный ArrayList: ");
         System.out.println(list);
+        System.out.print("ArrayList без четных чисел: ");
         System.out.println(deleteEvenArrayList(list));
+        System.out.print("Максимальное значение в сгенерированном ArrayList: ");
+        System.out.println(Collections.max(list));
+        System.out.print("Среднее значение в сгенерированном ArrayList: ");
+        System.out.println(averageArrayList(list));
     }
     public static ArrayList<Integer> generateRandomArrayList(int size, int max, int min) {
         ArrayList<Integer> list = new ArrayList<Integer>(size);
@@ -32,9 +40,16 @@ public class Main{
         while(iterator.hasNext()){
             Integer o = iterator.next();
             if(o % 2 != 0){
-                //resultList.add(o);
+                resultList.add(o);
             }
         }
         return resultList;
+    }
+    public static double averageArrayList(ArrayList<Integer> list) {
+        int sum = 0;
+        for (Integer element : list) {
+            sum += element;      
+        }
+        return (double)sum / list.size();
     }
 }
